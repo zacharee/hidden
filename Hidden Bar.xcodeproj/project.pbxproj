@@ -357,7 +357,7 @@
 			);
 			mainGroup = 929113E821F9D04100173149;
 			packageReferences = (
-				08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "HotKey" */,
+				08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "" */,
 			);
 			productRefGroup = 929113F221F9D04100173149 /* Products */;
 			projectDirPath = "";
@@ -602,11 +602,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hidden/Hidden.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -627,11 +625,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hidden/Hidden.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = hidden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -652,10 +648,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LauncherApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -676,10 +670,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W777S7V8TN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LauncherApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -728,7 +720,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+		08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey/";
 			requirement = {
@@ -741,7 +733,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		08A5F85E23AA01EE00981CA5 /* HotKey */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "HotKey" */;
+			package = 08A5F85D23AA01EE00981CA5 /* XCRemoteSwiftPackageReference "" */;
 			productName = HotKey;
 		};
 /* End XCSwiftPackageProductDependency section */

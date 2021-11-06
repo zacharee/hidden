@@ -60,7 +60,6 @@ class StatusBarController {
     
     //MARK: - Methods
     init() {
-        
         setupUI()
         setupAlwayHideStatusBar()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -81,7 +80,7 @@ class StatusBarController {
         updateAutoCollapseMenuTitle()
         
         if let button = expandCollapseStatusBar.button {
-            button.image = Assets.collapseImage
+            button.image = Assets.expandImage
             button.target = self
             
             button.action = #selector(self.expandCollapseButtonPressed(sender:))
@@ -134,6 +133,25 @@ class StatusBarController {
     func expandCollapseIfNeeded() {
         self.isCollapsed ? self.expandMenubar() : self.collapseMenuBar()
     }
+
+    private func animateExpandCollapse(button: NSStatusBarButton, collapse: Bool) {
+        let anchor = CGPoint(x: 0.5, y: 0.5)
+        button.layer?.anchorPoint = anchor
+        button.layer?.position = CGPoint(x: NSMidX(button.frame), y: NSMidY(button.frame))
+
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        rotateAnimation.fromValue = !collapse ? CGFloat.pi : -CGFloat.pi
+        rotateAnimation.toValue = 0
+        rotateAnimation.duration = 0.1;
+
+        CATransaction.begin()
+        button.layer?.add(rotateAnimation, forKey: "rotate")
+        CATransaction.setCompletionBlock {
+            button.image = collapse ? Assets.expandImage : Assets.collapseImage
+        }
+        CATransaction.commit()
+    }
     
     private func collapseMenuBar() {
         guard self.isValidPosition && !self.isCollapsed else {
@@ -143,7 +161,7 @@ class StatusBarController {
         
         separateStatusBar.length = self.collapseSeparateStatusBarIconLength
         if let button = expandCollapseStatusBar.button {
-            button.image = Assets.expandImage
+            animateExpandCollapse(button: button, collapse: true)
         }
         if Preferences.useFullStatusBarOnExpandEnabled {
             NSApp.setActivationPolicy(.accessory)
@@ -155,7 +173,7 @@ class StatusBarController {
         guard self.isCollapsed else {return}
         separateStatusBar.length = normalSeparateStatusBarIconLength
         if let button = expandCollapseStatusBar.button {
-            button.image = Assets.collapseImage
+            animateExpandCollapse(button: button, collapse: false)
         }
         autoCollapseIfNeeded()
         
